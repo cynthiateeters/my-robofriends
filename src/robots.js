@@ -1,3 +1,5 @@
+// https://next.json-generator.com/4kb2olckv
+// https://json-to-js.com/
 export const robots = [
   {
     id: 1,
@@ -34,5 +36,60 @@ export const robots = [
     name: "ISOP KIPLEX",
     username: "Rose",
     email: "Rose@londonmail.co.uk"
+  },
+  
+  {
+    id: 7,
+    name: "EARTHA SPORTS",
+    username: "Lisa",
+    email: "lisa@quonata.co.uk"
+  },
+  {
+    id: 8,
+    name: "EXIAND CONFRENZY",
+    username: "Ester",
+    email: "ester@dognost.me"
+  },
+  {
+    id: 9,
+    name: "LUNCHPOD INRT",
+    username: "Gloria",
+    email: "gloria@prosely.com"
+  },
+  {
+    id: 10,
+    name: "GAPTEC ZAGGLES",
+    username: "Molly",
+    email: "molly@utara.net"
+  },
+  {
+    id: 11,
+    name: "KIDSTOCK GLUKGLUK",
+    username: "Nixon",
+    email: "nixon@tropoli.io"
+  },
+  {
+    id: 12,
+    name: "ENTROFLEX EXODOC",
+    username: "Carolyn",
+    email: "carolyn@twiist.org"
+  },
+  {
+    id: 13,
+    name: "ZIDOX VINCH",
+    username: "Eugenia",
+    email: "eugenia@zanity.tv"
+  },
+  {
+    id: 14,
+    name: "EARTHPLEX VIRVA",
+    username: "Sykes",
+    email: "sykes@idealis.biz"
+  },
+  {
+    id: 15,
+    name: "NEWCUBE OCTOCORE",
+    username: "Helene",
+    email: "helene@cemention.info"
   }
 ];
