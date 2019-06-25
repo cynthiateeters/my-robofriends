@@ -21,21 +21,21 @@ React will use the key values to keep track of each element.
 https://www.tutorialspoint.com/reactjs/reactjs_keys.htm
 */
 const CardList = ({ robots }) => {
- return (
-  <div>
-   {
-    robots.map((user, i) => {
-     return (
-      <Card
-       key={i}
-       id={robots[i].id}
-       name={robots[i].name}
-       email={robots[i].email}
-      />);
-    })
-   }
-  </div>
- );
+  return (
+    <div>
+      {
+        robots.map((user, i) => {
+          return (
+            <Card
+              key={i}
+              id={robots[i].id}
+              name={robots[i].name}
+              email={robots[i].email}
+            />);
+        })
+      }
+    </div>
+  );
 }
 
 export default CardList;
