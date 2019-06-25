@@ -9,6 +9,6 @@ src: local('SEGA LOGO FONT'), url('SEGA.woff') format('woff');
 
 h1 {
  font-family: 'SEGA LOGO FONT', roboto, sans-serif;
- color: #efefef;
+ color: #9EEBCF;
  font-weight: 200;
 }

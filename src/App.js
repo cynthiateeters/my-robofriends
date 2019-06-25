@@ -23,7 +23,7 @@ class App extends Component {
       });
       return (
          <div className='tc'>
-            <h1 className='f1 pv5'>RoboFriends</h1>
+            <h1 className='f1 pv5 m1'>RoboFriends</h1>
             <SearchBox searchChange={this.onSearchChange} />
             <hr></hr>
             <CardList robots={filteredRobots} />
