@@ -2,6 +2,10 @@
   "name": "robofriends",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cynthiateeters/my-robofriends"
+  },
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
