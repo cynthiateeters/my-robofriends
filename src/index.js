@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
-import { createLogger } from 'redux-logger';
 import { Provider } from 'react-redux';
 import { searchRobots } from './reducers';
 import './index.css';
@@ -10,13 +9,20 @@ import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';
 
-const logger = createLogger(
- {
-  timestamp: false,
-  level: 'log'
- });
+/* 
+Log only in development 
+https://github.com/LogRocket/redux-logger#log-only-in-development
+*/
 
-const store = createStore(searchRobots, applyMiddleware(logger));
+const developmentLog = false;
+
+const middlewares = [];
+if (developmentLog && process.env.NODE_ENV === `development`) {
+  const { logger } = require(`redux-logger`);
+  middlewares.push(logger);
+}
+
+const store = createStore(searchRobots, applyMiddleware(...middlewares));
 
 ReactDOM.render(
  <Provider store={store}>
