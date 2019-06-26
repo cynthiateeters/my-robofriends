@@ -3,6 +3,7 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 //import { robots } from './robots';
 import Scroll from '../components/Scroll';
+import ErrorBoundary from '../components/ErrorBoundary';
 import './App.css';
 
 class App extends Component {
@@ -17,8 +18,9 @@ class App extends Component {
    componentDidMount() {
       fetch('https://jsonplaceholder.typicode.com/users')
          .then(response => response.json())
-         .then(users => this.setState({ robots: users })
-         );
+         .then(users => this.setState({ robots: users }))
+         .catch(error => console.error(`FETCH ERROR:: ${error}`))
+         ;
    }
 
    onSearchChange = (event) => {
@@ -40,7 +42,9 @@ class App extends Component {
                <h1 className='f1 pv3 m1'>RoboFriends</h1>
                <SearchBox searchChange={onSearchChange} />
                <Scroll>
-                  <CardList robots={filteredRobots} />
+                  <ErrorBoundary>
+                     <CardList robots={filteredRobots} />
+                  </ErrorBoundary>
                </Scroll>
             </div>
          );
