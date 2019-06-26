@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { searchRobots } from './reducers';
+import { searchRobots, requestRobots } from './reducers';
 import './index.css';
 import App from './containers/App';
 
@@ -14,15 +15,17 @@ Log only in development
 https://github.com/LogRocket/redux-logger#log-only-in-development
 */
 
-const developmentLog = false;
+const developmentLog = true;
 
-const middlewares = [];
+const middlewares = [thunkMiddleware];
 if (developmentLog && process.env.NODE_ENV === `development`) {
   const { logger } = require(`redux-logger`);
   middlewares.push(logger);
 }
 
-const store = createStore(searchRobots, applyMiddleware(...middlewares));
+const rootReducer = combineReducers({requestRobots, searchRobots});
+
+const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 ReactDOM.render(
  <Provider store={store}>
