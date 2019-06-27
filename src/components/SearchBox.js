@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /*
 React attaches listeners 
@@ -22,17 +23,21 @@ by React in this way is called a
 https://reactjs.org/docs/forms.html
 
 */
-const SearchBox = ({ searchfield, searchChange }) => {
- return (
-  <div className='pa2'>
-   <input
-    className='pa3 ba b--green bg-lightest-blue text-input'
-    type='search'
-    placeholder='search robot name'
-    onChange={searchChange}
-   />
-  </div>
- );
-}
+const SearchBox = ({ searchChange }) => {
+  return (
+    <div className="pa2">
+      <input
+        className="pa3 ba b--green bg-lightest-blue text-input"
+        type="search"
+        placeholder="search robot name"
+        onChange={searchChange}
+      />
+    </div>
+  );
+};
+
+SearchBox.propTypes = {
+  searchChange: PropTypes.func.isRequired,
+};
 
 export default SearchBox;
